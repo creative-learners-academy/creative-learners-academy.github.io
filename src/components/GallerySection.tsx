@@ -22,13 +22,14 @@ const GallerySection = () => {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto text-center mb-12"
         >
-          <p className="section-label mb-3">Gallery</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
-            A Glimpse Into Our Classroom
+          <p className="section-label mb-4">Gallery</p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
+            A Glimpse Into Our{" "}
+            <span className="italic gold-gradient-text">Classroom</span>
           </h2>
         </motion.div>
 
-        <div className="snap-gallery">
+        <div className="snap-gallery px-2">
           {images.map((img, i) => (
             <motion.div
               key={i}
@@ -36,13 +37,13 @@ const GallerySection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="w-[80%] sm:w-[45%] lg:w-[30%] flex-shrink-0"
+              className="w-[80%] sm:w-[48%] lg:w-[32%] flex-shrink-0"
             >
-              <div className="glass-card overflow-hidden">
+              <div className="rounded-2xl overflow-hidden" style={{ boxShadow: 'var(--shadow-card)' }}>
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full aspect-video object-cover outline outline-1 outline-offset-[-1px] outline-foreground/5"
+                  className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
