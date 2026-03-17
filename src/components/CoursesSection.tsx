@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Monitor, MapPin, Clock, Users, Wifi } from "lucide-react";
+import { MapPin, Clock, Wifi, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const onlineCourses = [
@@ -14,26 +14,21 @@ const offlineCourses = [
   { subject: "Hindi", classes: "Class 4–8", timing: "Tue, Thu, Sat — 4:00 PM", location: "Sector 15, Noida" },
 ];
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0 },
-};
-
 const CoursesSection = () => {
   return (
-    <section id="courses" className="py-20 md:py-28 bg-secondary/40">
+    <section id="courses" className="py-20 md:py-28 warm-section">
       <div className="container mx-auto px-4">
         <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto text-center mb-16"
         >
-          <p className="section-label mb-3">Courses</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
-            Learn Your Way — Online or Offline
+          <p className="section-label mb-4">Courses</p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-5">
+            Learn Your Way —{" "}
+            <span className="italic gold-gradient-text">Online or Offline</span>
           </h2>
           <p className="text-muted-foreground">
             Choose from live interactive online sessions or in-person batch classes. Same quality, your convenience.
@@ -43,59 +38,57 @@ const CoursesSection = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Online */}
           <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="online-glow rounded-2xl p-1"
+            className="online-glow rounded-3xl p-1"
           >
-            <div className="glass-card p-6 h-full hover:scale-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <div className="glass-card-static p-7 h-full rounded-3xl">
+              <div className="flex items-center gap-3 mb-7">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Wifi className="text-primary" size={20} strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl text-foreground">Online Classes</h3>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent pulse-live" />
-                    <span className="text-xs text-accent font-medium uppercase tracking-widest">Live</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary pulse-live" />
+                    <span className="text-[10px] text-primary font-semibold uppercase tracking-[0.2em]">Live Sessions</span>
                   </div>
                 </div>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {onlineCourses.map((c) => (
-                  <div key={c.subject} className="flex items-start justify-between p-3 rounded-lg bg-secondary/50">
+                  <div key={c.subject} className="flex items-start justify-between p-4 rounded-xl bg-background/60">
                     <div>
                       <p className="font-medium text-foreground">{c.subject}</p>
-                      <p className="text-xs text-muted-foreground">{c.classes}</p>
-                      <div className="flex items-center gap-1 mt-1 text-xs text-muted-foreground">
+                      <p className="text-xs text-muted-foreground mt-0.5">{c.classes}</p>
+                      <div className="flex items-center gap-1.5 mt-1.5 text-xs text-muted-foreground">
                         <Clock size={12} strokeWidth={1.5} /> {c.timing}
                       </div>
                     </div>
-                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-md">
+                    <span className="text-[11px] font-semibold text-primary bg-primary/8 px-2.5 py-1 rounded-lg whitespace-nowrap">
                       {c.spots}
                     </span>
                   </div>
                 ))}
               </div>
-              <Button variant="hero" className="w-full mt-6" asChild>
-                <a href="#contact">Join Online Batch</a>
+              <Button variant="gold" className="w-full mt-7" asChild>
+                <a href="#contact">Join Online Batch <ArrowRight size={16} /></a>
               </Button>
             </div>
           </motion.div>
 
           {/* Offline */}
           <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="glass-card p-6 h-full hover:scale-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-foreground/5 flex items-center justify-center">
+            <div className="glass-card-static p-7 h-full rounded-3xl">
+              <div className="flex items-center gap-3 mb-7">
+                <div className="w-11 h-11 rounded-xl bg-foreground/5 flex items-center justify-center">
                   <MapPin className="text-foreground" size={20} strokeWidth={1.5} />
                 </div>
                 <div>
@@ -103,23 +96,23 @@ const CoursesSection = () => {
                   <p className="text-xs text-muted-foreground">In-person batch coaching</p>
                 </div>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {offlineCourses.map((c) => (
-                  <div key={c.subject} className="flex items-start justify-between p-3 rounded-lg bg-secondary/50">
+                  <div key={c.subject} className="flex items-start justify-between p-4 rounded-xl bg-background/60">
                     <div>
                       <p className="font-medium text-foreground">{c.subject}</p>
-                      <p className="text-xs text-muted-foreground">{c.classes}</p>
-                      <div className="flex items-center gap-1 mt-1 text-xs text-muted-foreground">
+                      <p className="text-xs text-muted-foreground mt-0.5">{c.classes}</p>
+                      <div className="flex items-center gap-1.5 mt-1.5 text-xs text-muted-foreground">
                         <Clock size={12} strokeWidth={1.5} /> {c.timing}
                       </div>
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground whitespace-nowrap">
                       <MapPin size={12} strokeWidth={1.5} /> {c.location}
                     </div>
                   </div>
                 ))}
               </div>
-              <Button variant="heroOutline" className="w-full mt-6" asChild>
+              <Button variant="heroOutline" className="w-full mt-7" asChild>
                 <a href="#contact">Check Availability</a>
               </Button>
             </div>

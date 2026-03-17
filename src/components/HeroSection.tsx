@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Star, BookOpen } from "lucide-react";
+import { ArrowRight, Users, Star, BookOpen, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-teaching.jpg";
 
 const stats = [
@@ -11,23 +11,31 @@ const stats = [
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 hero-gradient overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative pt-24 pb-16 md:pt-36 md:pb-28 hero-gradient overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-primary/5 blur-3xl" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-gold/5 blur-3xl" />
+
+      <div className="container mx-auto px-4 relative">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
           >
-            <p className="section-label mb-4">Personalized Mentorship</p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 mb-6">
+              <Sparkles size={14} className="text-primary" />
+              <span className="text-xs font-medium text-primary tracking-wide">Personalized Mentorship</span>
+            </div>
+
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] text-foreground leading-[1.08] mb-6">
               Mastering Every Subject{" "}
-              <span className="italic text-primary">Through Care</span>
+              <span className="italic gold-gradient-text">Through Care</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-lg mb-8">
+            <p className="text-base md:text-lg text-muted-foreground max-w-lg mb-10 leading-relaxed">
               Offline batches for local students and live online sessions for learners everywhere. 
-              Dedicated attention, proven results.
+              Dedicated attention, proven results, lasting confidence.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" asChild>
@@ -41,12 +49,11 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex gap-8 mt-12">
+            <div className="flex gap-10 mt-14 pt-8 border-t border-border">
               {stats.map((s) => (
-                <div key={s.label} className="text-center">
-                  <s.icon className="mx-auto mb-1 text-primary" size={20} strokeWidth={1.5} />
-                  <p className="text-2xl font-serif text-foreground">{s.value}</p>
-                  <p className="text-xs text-muted-foreground">{s.label}</p>
+                <div key={s.label}>
+                  <p className="text-3xl font-serif text-foreground">{s.value}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5 tracking-wide">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -56,21 +63,31 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
             className="relative"
           >
-            <div className="glass-card overflow-hidden">
+            <div className="relative rounded-3xl overflow-hidden" style={{ boxShadow: 'var(--shadow-elevated)' }}>
               <img
                 src={heroImg}
                 alt="Teacher in classroom"
                 className="w-full aspect-[4/3] object-cover"
               />
+              {/* Warm overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 via-transparent to-transparent" />
             </div>
+            
             {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 glass-card px-4 py-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-accent pulse-live" />
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-5 -left-5 glass-card-static px-5 py-3 flex items-center gap-2.5 rounded-2xl"
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-primary pulse-live" />
               <span className="text-sm font-medium text-foreground">Online classes available</span>
-            </div>
+            </motion.div>
+
+            {/* Decorative corner ornament */}
+            <div className="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-primary/20 rounded-tr-3xl" />
           </motion.div>
         </div>
       </div>
