@@ -31,9 +31,9 @@ const CourseRow = ({ item }: { item: { subject: string; fee: string; days: strin
   <div className="flex items-center justify-between p-3.5 rounded-xl bg-background/60 gap-3">
     <div className="min-w-0">
       <p className="font-medium text-foreground text-sm">{item.subject}</p>
-      <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground flex-wrap">
-        <span className="flex items-center gap-1"><Clock size={11} strokeWidth={1.5} />{item.days}</span>
-        <span>{item.timing}</span>
+      <div className="flex items-center gap-3 mt-1 text-xs text-foreground/70 font-medium flex-wrap">
+        <span className="flex items-center gap-1"><Clock size={11} strokeWidth={2} />{item.days}</span>
+        <span className="font-semibold">{item.timing}</span>
       </div>
     </div>
     <span className="text-sm font-semibold text-primary bg-primary/8 px-2.5 py-1 rounded-lg whitespace-nowrap">
