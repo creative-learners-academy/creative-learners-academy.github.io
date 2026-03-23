@@ -30,12 +30,13 @@ const HeroSection = () => {
             </div>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] text-foreground leading-[1.08] mb-6">
-              Mastering Every Subject{" "}
-              <span className="italic gold-gradient-text">Through Care</span>
+              Where Every Child{" "}
+              <span className="italic gold-gradient-text">Finds Their Wings</span>
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-lg mb-10 leading-relaxed">
-              Offline batches for local students and live online sessions for learners everywhere. 
-              Dedicated attention, proven results, lasting confidence.
+              Har bachche mein ek chamakta sitara hota hai — bas zaroorat hoti hai sahi guidance ki. 
+              Online ho ya offline, Priya Ma'am ka pyaar aur mehnat har student ko confident banata hai. 
+              Aapke bachche ka behtar kal, yahaan se shuru hota hai.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" asChild>
