@@ -96,7 +96,10 @@ const CoursesSection = () => {
               </div>
 
               {/* 10th Subject-wise */}
-              <h4 className="font-serif text-base text-foreground mb-3">10th — Subject-wise</h4>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-serif text-base text-foreground">10th — Subject-wise</h4>
+                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+              </div>
               <div className="space-y-2.5 mb-6">
                 {class10Subjects.map((c) => <CourseRow key={c.subject} item={c} />)}
               </div>
