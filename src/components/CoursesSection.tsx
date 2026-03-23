@@ -22,9 +22,7 @@ const specialClasses = [
 ];
 
 const offlineCourses = [
-  { subject: "Mathematics", classes: "Class 6–10", timing: "Mon–Fri — 4:00 PM", location: "Sector 15, Noida" },
-  { subject: "Science", classes: "Class 8–10", timing: "Mon, Wed, Fri — 6:00 PM", location: "Sector 15, Noida" },
-  { subject: "Hindi", classes: "Class 4–8", timing: "Tue, Thu, Sat — 4:00 PM", location: "Sector 15, Noida" },
+  { subject: "Handwriting", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
 ];
 
 const CourseRow = ({ item }: { item: { subject: string; fee: string; days: string; timing: string } }) => (
