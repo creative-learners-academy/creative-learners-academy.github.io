@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Heart, Target, Clock } from "lucide-react";
+import { GraduationCap, Heart, Target, Clock, Award, Palette, PenTool } from "lucide-react";
 
 const highlights = [
-  { icon: GraduationCap, title: "Qualified Educator", desc: "B.Ed certified with specialization in Science & Mathematics" },
-  { icon: Heart, title: "Passionate Teaching", desc: "Every student gets personalized attention and genuine care" },
-  { icon: Target, title: "Result Oriented", desc: "Focused approach ensuring consistent academic improvement" },
-  { icon: Clock, title: "Flexible Timings", desc: "Convenient batch schedules for working parents" },
+  { icon: GraduationCap, title: "M.A. English Literature", desc: "Strong academic foundation with deep expertise in language and literature" },
+  { icon: Heart, title: "Passionate Teaching", desc: "Every student gets personalized attention and genuine care like family" },
+  { icon: Target, title: "Result Oriented", desc: "Focused approach ensuring consistent academic improvement and confidence" },
+  { icon: Clock, title: "Flexible Timings", desc: "Convenient batch schedules designed for working parents" },
+];
+
+const certifications = [
+  { icon: Award, label: "Experienced & Dedicated Teacher" },
+  { icon: Palette, label: "Certified Phonics, Drawing & Folk Art Teacher" },
+  { icon: PenTool, label: "Specialist in Handwriting Improvement" },
 ];
 
 const AboutSection = () => {
@@ -21,16 +27,17 @@ const AboutSection = () => {
         >
           <p className="section-label mb-4">About</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-5">
-            Dedicated to Nurturing{" "}
-            <span className="italic gold-gradient-text">Young Minds</span>
+            Meet{" "}
+            <span className="italic gold-gradient-text">Priya T.</span>
           </h2>
-          <p className="text-muted-foreground text-base">
-            With over 8 years of teaching experience, she brings a unique combination of 
-            academic rigor and genuine warmth to every class. Students don't just learn — they thrive.
+          <p className="text-muted-foreground text-base leading-relaxed">
+            An experienced and dedicated teacher with an M.A. in English Literature, 
+            Priya brings a unique combination of academic depth and genuine warmth to every class. 
+            Students don't just learn — they grow with confidence.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {highlights.map((h, i) => (
             <motion.div
               key={h.title}
@@ -48,6 +55,24 @@ const AboutSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Certifications Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="glass-card-static p-6 rounded-2xl"
+        >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+            {certifications.map((c) => (
+              <div key={c.label} className="flex items-center gap-2.5">
+                <c.icon className="text-primary shrink-0" size={18} strokeWidth={1.5} />
+                <span className="text-sm font-medium text-foreground">{c.label}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

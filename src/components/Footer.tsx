@@ -14,7 +14,7 @@ const Footer = () => {
           <span className="text-xs text-muted-foreground/50">✦</span>
         </div>
         <p className="text-center text-[11px] text-muted-foreground/60">
-          © {new Date().getFullYear()} Guruji Classes. All rights reserved.
+          © {new Date().getFullYear()} Creative Learners. All rights reserved.
         </p>
       </div>
     </footer>
