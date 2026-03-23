@@ -1,11 +1,24 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, Wifi, ArrowRight } from "lucide-react";
+import { MapPin, Clock, Wifi, ArrowRight, IndianRupee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const onlineCourses = [
-  { subject: "Mathematics", classes: "Class 6–10", timing: "Mon, Wed, Fri — 5:00 PM", spots: "4 spots left" },
-  { subject: "Science", classes: "Class 6–10", timing: "Tue, Thu — 5:00 PM", spots: "6 spots left" },
-  { subject: "English", classes: "Class 4–8", timing: "Sat — 10:00 AM", spots: "8 spots left" },
+const tuitionClasses = [
+  { subject: "Class 4th & 5th", fee: "₹2,500", days: "Monday to Friday", timing: "1 Hour" },
+  { subject: "Class 6th to 8th", fee: "₹3,500", days: "Monday to Saturday", timing: "1.5 to 2 Hours" },
+];
+
+const class10Subjects = [
+  { subject: "Science", fee: "₹3,000", days: "Mon, Wed, Friday", timing: "1.5 Hours" },
+  { subject: "Social Studies (SST)", fee: "₹2,500", days: "Tue, Wed, Saturday", timing: "1.5 Hours" },
+  { subject: "English", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
+  { subject: "Hindi", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
+];
+
+const specialClasses = [
+  { subject: "Phonics", fee: "₹2,000", days: "Monday to Saturday", timing: "1 Hour" },
+  { subject: "Drawing", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
+  { subject: "Folk Art", fee: "₹2,200", days: "Saturday, Sunday", timing: "1.5 Hours" },
+  { subject: "Handwriting", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
 ];
 
 const offlineCourses = [
@@ -13,6 +26,21 @@ const offlineCourses = [
   { subject: "Science", classes: "Class 8–10", timing: "Mon, Wed, Fri — 6:00 PM", location: "Sector 15, Noida" },
   { subject: "Hindi", classes: "Class 4–8", timing: "Tue, Thu, Sat — 4:00 PM", location: "Sector 15, Noida" },
 ];
+
+const CourseRow = ({ item }: { item: { subject: string; fee: string; days: string; timing: string } }) => (
+  <div className="flex items-center justify-between p-3.5 rounded-xl bg-background/60 gap-3">
+    <div className="min-w-0">
+      <p className="font-medium text-foreground text-sm">{item.subject}</p>
+      <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground flex-wrap">
+        <span className="flex items-center gap-1"><Clock size={11} strokeWidth={1.5} />{item.days}</span>
+        <span>{item.timing}</span>
+      </div>
+    </div>
+    <span className="text-sm font-semibold text-primary bg-primary/8 px-2.5 py-1 rounded-lg whitespace-nowrap">
+      {item.fee}
+    </span>
+  </div>
+);
 
 const CoursesSection = () => {
   return (
@@ -57,22 +85,25 @@ const CoursesSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="space-y-3">
-                {onlineCourses.map((c) => (
-                  <div key={c.subject} className="flex items-start justify-between p-4 rounded-xl bg-background/60">
-                    <div>
-                      <p className="font-medium text-foreground">{c.subject}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{c.classes}</p>
-                      <div className="flex items-center gap-1.5 mt-1.5 text-xs text-muted-foreground">
-                        <Clock size={12} strokeWidth={1.5} /> {c.timing}
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-semibold text-primary bg-primary/8 px-2.5 py-1 rounded-lg whitespace-nowrap">
-                      {c.spots}
-                    </span>
-                  </div>
-                ))}
+
+              {/* Tuition Classes */}
+              <h4 className="font-serif text-base text-foreground mb-3">Tuition Classes</h4>
+              <div className="space-y-2.5 mb-6">
+                {tuitionClasses.map((c) => <CourseRow key={c.subject} item={c} />)}
               </div>
+
+              {/* 10th Subject-wise */}
+              <h4 className="font-serif text-base text-foreground mb-3">10th — Subject-wise</h4>
+              <div className="space-y-2.5 mb-6">
+                {class10Subjects.map((c) => <CourseRow key={c.subject} item={c} />)}
+              </div>
+
+              {/* Special Classes */}
+              <h4 className="font-serif text-base text-foreground mb-3">Special Classes</h4>
+              <div className="space-y-2.5">
+                {specialClasses.map((c) => <CourseRow key={c.subject} item={c} />)}
+              </div>
+
               <Button variant="gold" className="w-full mt-7" asChild>
                 <a href="#contact">Join Online Batch <ArrowRight size={16} /></a>
               </Button>
