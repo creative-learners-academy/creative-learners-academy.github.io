@@ -26,7 +26,7 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 mb-6">
               <Sparkles size={14} className="text-primary" />
-              <span className="text-xs font-medium text-primary tracking-wide">Personalized Mentorship</span>
+              <span className="text-xs font-medium text-primary tracking-wide">Creative Learners Academy</span>
             </div>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] text-foreground leading-[1.08] mb-6">
@@ -35,8 +35,8 @@ const HeroSection = () => {
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-lg mb-10 leading-relaxed">
               Har bachche mein ek chamakta sitara hota hai — bas zaroorat hoti hai sahi guidance ki. 
-              Online ho ya offline, Priya Ma'am ka pyaar aur mehnat har student ko confident banata hai. 
-              Aapke bachche ka behtar kal, yahaan se shuru hota hai.
+              Online ho ya offline, <strong>Priya Tewary Ma'am</strong> ka pyaar aur mehnat har student ko confident banata hai. 
+              Aapke bachche ka behtar kal, <strong>Creative Learners Academy</strong> se shuru hota hai.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" asChild>
@@ -70,24 +70,21 @@ const HeroSection = () => {
             <div className="relative rounded-3xl overflow-hidden" style={{ boxShadow: 'var(--shadow-elevated)' }}>
               <img
                 src={heroImg}
-                alt="Teacher in classroom"
+                alt="Creative Learners Academy - Priya Tewary"
                 className="w-full aspect-[4/3] object-cover"
               />
-              {/* Warm overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 via-transparent to-transparent" />
             </div>
             
-            {/* Floating badge */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-5 -left-5 glass-card-static px-5 py-3 flex items-center gap-2.5 rounded-2xl"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-primary pulse-live" />
-              <span className="text-sm font-medium text-foreground">Online classes available</span>
+              <span className="text-sm font-medium text-foreground">Admission Open 2026-27</span>
             </motion.div>
 
-            {/* Decorative corner ornament */}
             <div className="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-primary/20 rounded-tr-3xl" />
           </motion.div>
         </div>
