@@ -22,9 +22,7 @@ const specialClasses = [
 ];
 
 const offlineCourses = [
-  { subject: "Mathematics", classes: "Class 6–10", timing: "Mon–Fri — 4:00 PM", location: "Sector 15, Noida" },
-  { subject: "Science", classes: "Class 8–10", timing: "Mon, Wed, Fri — 6:00 PM", location: "Sector 15, Noida" },
-  { subject: "Hindi", classes: "Class 4–8", timing: "Tue, Thu, Sat — 4:00 PM", location: "Sector 15, Noida" },
+  { subject: "Handwriting", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
 ];
 
 const CourseRow = ({ item }: { item: { subject: string; fee: string; days: string; timing: string } }) => (
@@ -136,21 +134,12 @@ const CoursesSection = () => {
                   <p className="text-xs text-muted-foreground">In-person batch coaching</p>
                 </div>
               </div>
-              <div className="space-y-3">
-                {offlineCourses.map((c) => (
-                  <div key={c.subject} className="flex items-start justify-between p-4 rounded-xl bg-background/60">
-                    <div>
-                      <p className="font-medium text-foreground">{c.subject}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{c.classes}</p>
-                      <div className="flex items-center gap-1.5 mt-1.5 text-xs text-muted-foreground">
-                        <Clock size={12} strokeWidth={1.5} /> {c.timing}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground whitespace-nowrap">
-                      <MapPin size={12} strokeWidth={1.5} /> {c.location}
-                    </div>
-                  </div>
-                ))}
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-serif text-base text-foreground">Tuition Classes</h4>
+                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+              </div>
+              <div className="space-y-2.5">
+                {offlineCourses.map((c) => <CourseRow key={c.subject} item={c} />)}
               </div>
               <Button variant="heroOutline" className="w-full mt-7" asChild>
                 <a href="#contact">Check Availability</a>
