@@ -3,7 +3,7 @@ import { GraduationCap, Heart, Target, Clock, Award, Palette, PenTool } from "lu
 
 const highlights = [
   { icon: GraduationCap, title: "M.A. English Literature", desc: "Strong academic foundation with deep expertise in language and literature" },
-  { icon: Heart, title: "Passionate Teaching", desc: "Every student gets personalized attention and genuine care like family" },
+  { icon: Palette, title: "Passionate Artist", desc: "Certified in Phonics, Drawing & Folk Art — bringing creativity into every lesson" },
   { icon: Target, title: "Result Oriented", desc: "Focused approach ensuring consistent academic improvement and confidence" },
   { icon: Clock, title: "Flexible Timings", desc: "Convenient batch schedules designed for working parents" },
 ];
