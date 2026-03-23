@@ -31,9 +31,9 @@ const CourseRow = ({ item }: { item: { subject: string; fee: string; days: strin
   <div className="flex items-center justify-between p-3.5 rounded-xl bg-background/60 gap-3">
     <div className="min-w-0">
       <p className="font-medium text-foreground text-sm">{item.subject}</p>
-      <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground flex-wrap">
-        <span className="flex items-center gap-1"><Clock size={11} strokeWidth={1.5} />{item.days}</span>
-        <span>{item.timing}</span>
+      <div className="flex items-center gap-3 mt-1 text-xs text-foreground/70 font-medium flex-wrap">
+        <span className="flex items-center gap-1"><Clock size={11} strokeWidth={2} />{item.days}</span>
+        <span className="font-semibold">{item.timing}</span>
       </div>
     </div>
     <span className="text-sm font-semibold text-primary bg-primary/8 px-2.5 py-1 rounded-lg whitespace-nowrap">
@@ -87,19 +87,28 @@ const CoursesSection = () => {
               </div>
 
               {/* Tuition Classes */}
-              <h4 className="font-serif text-base text-foreground mb-3">Tuition Classes</h4>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-serif text-base text-foreground">Tuition Classes</h4>
+                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+              </div>
               <div className="space-y-2.5 mb-6">
                 {tuitionClasses.map((c) => <CourseRow key={c.subject} item={c} />)}
               </div>
 
               {/* 10th Subject-wise */}
-              <h4 className="font-serif text-base text-foreground mb-3">10th — Subject-wise</h4>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-serif text-base text-foreground">10th — Subject-wise</h4>
+                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+              </div>
               <div className="space-y-2.5 mb-6">
                 {class10Subjects.map((c) => <CourseRow key={c.subject} item={c} />)}
               </div>
 
               {/* Special Classes */}
-              <h4 className="font-serif text-base text-foreground mb-3">Special Classes</h4>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-serif text-base text-foreground">Special Classes</h4>
+                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+              </div>
               <div className="space-y-2.5">
                 {specialClasses.map((c) => <CourseRow key={c.subject} item={c} />)}
               </div>
