@@ -34,7 +34,6 @@ const TestimonialsSection = () => {
     fetchTestimonials();
   }, []);
 
-  // Fallback data for when DB is empty
   const fallbackTestimonials: Testimonial[] = [
     { id: "1", parent_name: "Priya Sharma", student_name: "Aarav", student_class: "Class 8", message: "My son's marks improved from 65% to 92% in just 3 months. The personalized attention makes all the difference!", rating: 5, created_at: "" },
     { id: "2", parent_name: "Rajesh Kumar", student_name: "Ananya", student_class: "Class 10", message: "Ma'am's teaching style is incredibly engaging. Board exam preparation has been completely stress-free.", rating: 5, created_at: "" },
@@ -47,8 +46,10 @@ const TestimonialsSection = () => {
   const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 warm-section">
-      <div className="container mx-auto px-4">
+    <section id="testimonials" className="py-20 md:py-28 warm-section relative">
+      <div className="glow-orb w-[350px] h-[350px] bg-primary/5 bottom-[10%] right-[-100px]" />
+
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,14 +89,14 @@ const TestimonialsSection = () => {
                 className="break-inside-avoid"
               >
                 <div className="glass-card p-7 rounded-2xl">
-                  <Quote className="text-primary/15 mb-4" size={28} strokeWidth={1.5} />
-                  <p className="text-foreground text-sm leading-relaxed mb-5">"{t.message}"</p>
+                  <Quote className="text-primary/20 mb-4" size={28} strokeWidth={1.5} />
+                  <p className="text-foreground/90 text-sm leading-relaxed mb-5">"{t.message}"</p>
                   <div className="flex items-center gap-1 mb-3">
                     {Array.from({ length: t.rating }).map((_, j) => (
                       <Star key={j} className="text-primary fill-primary" size={14} />
                     ))}
                     {Array.from({ length: 5 - t.rating }).map((_, j) => (
-                      <Star key={j} className="text-muted" size={14} />
+                      <Star key={`e${j}`} className="text-muted" size={14} />
                     ))}
                   </div>
                   <div>

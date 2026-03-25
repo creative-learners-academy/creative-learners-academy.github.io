@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, Wifi, ArrowRight, IndianRupee } from "lucide-react";
+import { MapPin, Clock, Wifi, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const tuitionClasses = [
@@ -26,15 +26,15 @@ const offlineCourses = [
 ];
 
 const CourseRow = ({ item }: { item: { subject: string; fee: string; days: string; timing: string } }) => (
-  <div className="flex items-center justify-between p-3.5 rounded-xl bg-background/60 gap-3">
+  <div className="flex items-center justify-between p-3.5 rounded-xl bg-background/40 border border-border/30 gap-3 hover:border-primary/20 transition-colors duration-300">
     <div className="min-w-0">
       <p className="font-medium text-foreground text-sm">{item.subject}</p>
-      <div className="flex items-center gap-3 mt-1 text-xs text-foreground/70 font-medium flex-wrap">
+      <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground font-medium flex-wrap">
         <span className="flex items-center gap-1"><Clock size={11} strokeWidth={2} />{item.days}</span>
-        <span className="font-semibold">{item.timing}</span>
+        <span className="font-semibold text-foreground/70">{item.timing}</span>
       </div>
     </div>
-    <span className="text-sm font-semibold text-primary bg-primary/8 px-2.5 py-1 rounded-lg whitespace-nowrap">
+    <span className="text-sm font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-lg whitespace-nowrap border border-primary/15">
       {item.fee}
     </span>
   </div>
@@ -42,8 +42,10 @@ const CourseRow = ({ item }: { item: { subject: string; fee: string; days: strin
 
 const CoursesSection = () => {
   return (
-    <section id="courses" className="py-20 md:py-28 warm-section">
-      <div className="container mx-auto px-4">
+    <section id="courses" className="py-20 md:py-28 warm-section relative">
+      <div className="glow-orb w-[400px] h-[400px] bg-primary/5 top-[10%] left-[-150px]" />
+      
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,44 +70,40 @@ const CoursesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="online-glow rounded-3xl p-1"
           >
             <div className="glass-card-static p-7 h-full rounded-3xl">
               <div className="flex items-center gap-3 mb-7">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,.1)]">
                   <Wifi className="text-primary" size={20} strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl text-foreground">Online Classes</h3>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary pulse-live" />
+                    <span className="w-2 h-2 rounded-full bg-primary pulse-live" />
                     <span className="text-[10px] text-primary font-semibold uppercase tracking-[0.2em]">Live Sessions</span>
                   </div>
                 </div>
               </div>
 
-              {/* Tuition Classes */}
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-serif text-base text-foreground">Tuition Classes</h4>
-                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+                <h4 className="font-serif text-base text-primary text-sm">Tuition Fee</h4>
               </div>
               <div className="space-y-2.5 mb-6">
                 {tuitionClasses.map((c) => <CourseRow key={c.subject} item={c} />)}
               </div>
 
-              {/* 10th Subject-wise */}
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-serif text-base text-foreground">10th — Subject-wise</h4>
-                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+                <h4 className="font-serif text-base text-primary text-sm">Tuition Fee</h4>
               </div>
               <div className="space-y-2.5 mb-6">
                 {class10Subjects.map((c) => <CourseRow key={c.subject} item={c} />)}
               </div>
 
-              {/* Special Classes */}
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-serif text-base text-foreground">Special Classes</h4>
-                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+                <h4 className="font-serif text-base text-primary text-sm">Tuition Fee</h4>
               </div>
               <div className="space-y-2.5">
                 {specialClasses.map((c) => <CourseRow key={c.subject} item={c} />)}
@@ -126,7 +124,7 @@ const CoursesSection = () => {
           >
             <div className="glass-card-static p-7 h-full rounded-3xl">
               <div className="flex items-center gap-3 mb-7">
-                <div className="w-11 h-11 rounded-xl bg-foreground/5 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
                   <MapPin className="text-foreground" size={20} strokeWidth={1.5} />
                 </div>
                 <div>
@@ -136,7 +134,7 @@ const CoursesSection = () => {
               </div>
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-serif text-base text-foreground">Tuition Classes</h4>
-                <h4 className="font-serif text-base text-foreground">Tuition Fee</h4>
+                <h4 className="font-serif text-base text-primary text-sm">Tuition Fee</h4>
               </div>
               <div className="space-y-2.5">
                 {offlineCourses.map((c) => <CourseRow key={c.subject} item={c} />)}
