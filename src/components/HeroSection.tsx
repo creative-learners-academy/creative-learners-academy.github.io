@@ -34,9 +34,10 @@ const HeroSection = () => {
               <span className="italic gold-gradient-text">Finds Their Wings</span>
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-lg mb-10 leading-relaxed">
-              Har bachche mein ek chamakta sitara hota hai — bas zaroorat hoti hai sahi guidance ki. 
-              Online ho ya offline, <strong>Priya Tewary Ma'am</strong> ka pyaar aur mehnat har student ko confident banata hai. 
-              Aapke bachche ka behtar kal, <strong>Creative Learners Academy</strong> se shuru hota hai.
+              Every child deserves a teacher who believes in them before they believe in themselves. 
+              At <strong>Creative Learners Academy</strong>, <strong>Priya Tewary Ma'am</strong> nurtures 
+              not just academics but confidence, curiosity and character — through personalised attention 
+              in both online and offline classes. Give your child the foundation they truly deserve.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" asChild>
