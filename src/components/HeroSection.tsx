@@ -34,10 +34,10 @@ const HeroSection = () => {
               <span className="italic gold-gradient-text">Finds Their Wings</span>
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-lg mb-10 leading-relaxed">
-              Every child deserves a teacher who believes in them before they believe in themselves. 
-              At <strong>Creative Learners Academy</strong>, <strong>Priya Tewary Ma'am</strong> nurtures 
-              not just academics but confidence, curiosity and character — through personalised attention 
-              in both online and offline classes. Give your child the foundation they truly deserve.
+              I believe every child has a spark waiting to shine — they just need someone who truly cares. 
+              With personalised attention in both online and offline classes, I focus on building not just 
+              academic skills but real confidence, curiosity and character. 
+              Let me help your child discover what they're truly capable of.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" asChild>
