@@ -13,7 +13,7 @@ const images = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-20 md:py-28">
+    <section id="gallery" className="py-20 md:py-28 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -39,11 +39,11 @@ const GallerySection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="w-[80%] sm:w-[48%] lg:w-[32%] flex-shrink-0"
             >
-              <div className="rounded-2xl overflow-hidden" style={{ boxShadow: 'var(--shadow-card)' }}>
+              <div className="rounded-2xl overflow-hidden border border-border/50 group" style={{ boxShadow: 'var(--shadow-card)' }}>
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
