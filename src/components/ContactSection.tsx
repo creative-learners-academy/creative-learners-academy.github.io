@@ -24,9 +24,9 @@ const ContactSection = () => {
 
             <div className="space-y-5">
               {[
-                { icon: Phone, label: "Call us", value: "+91 98765 43210" },
-                { icon: Mail, label: "Email", value: "classes@guruji.com" },
-                { icon: MapPin, label: "Location", value: "Sector 15, Noida, UP" },
+                { icon: Phone, label: "Call us", value: "+91 9102419492" },
+                { icon: Mail, label: "Email", value: "priyatewary2015@gmail.com" },
+                { icon: MapPin, label: "Location", value: "Sonari, Jamshedpur" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">
