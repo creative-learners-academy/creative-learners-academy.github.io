@@ -26,6 +26,7 @@ const SubmitReview = () => {
       student_class: form.student_class,
       message: form.message.trim(),
       rating: form.rating,
+      approved: true,
     });
 
     setSubmitting(false);

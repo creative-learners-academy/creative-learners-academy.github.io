@@ -61,12 +61,17 @@ const HeroSection = () => {
             Where Every Child Finds Their Wings
           </motion.h2>
           
-          <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed"
+          >
             I believe every child has a spark waiting to shine — they just need someone who truly cares. 
             With personalised attention in both online and offline classes, I focus on building not just 
             academic skills but real confidence, curiosity and character. 
             Let me help your child discover what they're truly capable of.
-          </p>
+          </motion.p>
           
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
