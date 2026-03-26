@@ -26,6 +26,7 @@ const SubmitReview = () => {
       student_class: form.student_class,
       message: form.message.trim(),
       rating: form.rating,
+      approved: true,
     });
 
     setSubmitting(false);
@@ -59,7 +60,7 @@ const SubmitReview = () => {
         className="w-full max-w-lg"
       >
         <div className="text-center mb-8">
-          <p className="font-serif text-2xl text-foreground italic mb-1">Guruji Classes</p>
+          <p className="font-serif text-2xl text-foreground italic mb-1">Creative <span className="gold-gradient-text">Learners</span></p>
           <p className="section-label">Share Your Experience</p>
         </div>
 
