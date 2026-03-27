@@ -26,7 +26,7 @@ const SubmitReview = () => {
       student_class: form.student_class,
       message: form.message.trim(),
       rating: form.rating,
-      approved: true,
+      approved: false,
     });
 
     setSubmitting(false);
@@ -44,7 +44,7 @@ const SubmitReview = () => {
           <CheckCircle className="text-primary mx-auto mb-4" size={48} strokeWidth={1.5} />
           <h2 className="font-serif text-2xl text-foreground mb-3">Thank You! 🙏</h2>
           <p className="text-muted-foreground text-sm">
-            Your review has been submitted successfully. It will appear on our website after approval.
+            Your review has been submitted successfully. It will appear on our website once approved by the teacher. Thank you for your valuable feedback!
           </p>
         </motion.div>
       </div>

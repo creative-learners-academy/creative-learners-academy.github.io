@@ -34,16 +34,7 @@ const TestimonialsSection = () => {
     fetchTestimonials();
   }, []);
 
-  const fallbackTestimonials: Testimonial[] = [
-    { id: "1", parent_name: "Priya Sharma", student_name: "Aarav", student_class: "Class 8", message: "My son's marks improved from 65% to 92% in just 3 months. The personalized attention makes all the difference!", rating: 5, created_at: "" },
-    { id: "2", parent_name: "Rajesh Kumar", student_name: "Ananya", student_class: "Class 10", message: "Ma'am's teaching style is incredibly engaging. Board exam preparation has been completely stress-free.", rating: 5, created_at: "" },
-    { id: "3", parent_name: "Sunita Verma", student_name: "Rohan", student_class: "Class 6", message: "The online classes are just as effective as offline ones. Rohan has gained so much confidence in Mathematics.", rating: 5, created_at: "" },
-    { id: "4", parent_name: "Amit Patel", student_name: "Kavya", student_class: "Class 9", message: "What sets these classes apart is the genuine care for each student. Kavya has become self-motivated now.", rating: 5, created_at: "" },
-    { id: "5", parent_name: "Meena Gupta", student_name: "Ishaan", student_class: "Class 7", message: "Affordable, effective, and deeply personal. Ishaan actually enjoys studying now — unimaginable before!", rating: 4, created_at: "" },
-    { id: "6", parent_name: "Deepak Joshi", student_name: "Sanya", student_class: "Class 10", message: "Sanya scored 95+ in Science boards. The conceptual clarity and practice material is outstanding.", rating: 5, created_at: "" },
-  ];
-
-  const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
+  const displayTestimonials = testimonials;
 
   return (
     <section id="testimonials" className="py-20 md:py-28 warm-section relative">
@@ -76,6 +67,11 @@ const TestimonialsSection = () => {
                 <div className="h-3 bg-muted rounded w-5/6" />
               </div>
             ))}
+          </div>
+        ) : displayTestimonials.length === 0 ? (
+          <div className="text-center py-16">
+            <Quote className="text-primary/20 mx-auto mb-4" size={48} strokeWidth={1} />
+            <p className="text-muted-foreground text-lg">No reviews yet — be the first parent to share your experience!</p>
           </div>
         ) : (
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
