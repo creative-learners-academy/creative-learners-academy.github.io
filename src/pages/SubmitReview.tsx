@@ -100,9 +100,16 @@ const SubmitReview = () => {
                   className="w-full h-12 rounded-xl bg-background border-0 px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-shadow"
                 >
                   <option value="">Select</option>
-                  {[4, 5, 6, 7, 8, 9, 10].map((c) => (
-                    <option key={c} value={`Class ${c}`}>Class {c}</option>
-                  ))}
+                  <optgroup label="Tuition Classes">
+                    {["Class 4", "Class 5", "Class 6", "Class 7", "Class 8", "Class 9", "Class 10 – Science", "Class 10 – Social Studies (SST)", "Class 10 – English", "Class 10 – Hindi"].map((c) => (
+                      <option key={c} value={c}>{c}</option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="Special Classes">
+                    {["Phonics", "Drawing", "Folk Art"].map((c) => (
+                      <option key={c} value={c}>{c}</option>
+                    ))}
+                  </optgroup>
                 </select>
               </div>
             </div>
@@ -129,8 +136,8 @@ const SubmitReview = () => {
               <label className="section-label block mb-2.5">Your Experience</label>
               <textarea
                 required
-                maxLength={500}
-                rows={4}
+                maxLength={1000}
+                rows={6}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full rounded-xl bg-background border-0 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-shadow resize-none"
