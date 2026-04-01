@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Target, Clock, Palette } from "lucide-react";
+import priyaPhoto from "@/assets/priya-tewary.jpg";
 
 const highlights = [
   { icon: GraduationCap, title: "M.A. English Literature", desc: "Strong academic foundation with deep expertise in language and literature" },
@@ -14,25 +15,48 @@ const AboutSection = () => {
       <div className="glow-orb w-[300px] h-[300px] bg-primary/5 top-[20%] right-[-100px]" />
       
       <div className="container mx-auto px-4 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center mb-16"
-        >
-          <p className="section-label mb-4">About</p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-5">
-            Meet{" "}
-            <span className="italic gold-gradient-text">Priya Tewary</span>
-          </h2>
-          <p className="text-muted-foreground text-base leading-relaxed">
-            An experienced and dedicated teacher with an M.A. in English Literature, 
-            I bring a unique combination of academic depth and genuine warmth to every class. 
-            Students don't just learn — they grow with confidence.
-          </p>
-        </motion.div>
+        {/* Top: Photo + Text side by side */}
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-16">
+          {/* Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="flex-shrink-0"
+          >
+            <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/30 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
+              <img
+                src={priyaPhoto}
+                alt="Priya Tewary — Founder, Creative Learners Academy"
+                className="w-full h-full object-cover object-top"
+                style={{ filter: 'brightness(1.05) contrast(1.05) saturate(1.08)' }}
+              />
+            </div>
+          </motion.div>
 
+          {/* Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center md:text-left"
+          >
+            <p className="section-label mb-4">About</p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-5">
+              Meet{" "}
+              <span className="italic gold-gradient-text">Priya Tewary</span>
+            </h2>
+            <p className="text-muted-foreground text-base leading-relaxed max-w-xl">
+              An experienced and dedicated teacher with an M.A. in English Literature, 
+              I bring a unique combination of academic depth and genuine warmth to every class. 
+              Students don't just learn — they grow with confidence.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Highlights grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {highlights.map((h, i) => (
             <motion.div
