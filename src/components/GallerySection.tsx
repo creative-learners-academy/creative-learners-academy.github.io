@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import heroImg from "@/assets/hero-teaching.jpg";
+import galleryStudents from "@/assets/gallery-students-writing.jpg";
+import galleryGroup from "@/assets/gallery-group-class.jpg";
+import galleryBoys from "@/assets/gallery-boys-studying.jpg";
+import galleryCelebration from "@/assets/gallery-celebration.jpg";
+import galleryPhonics from "@/assets/gallery-phonics-class.jpg";
 
 const images = [
-  { src: heroImg, alt: "Teaching session" },
-  { src: gallery1, alt: "Study materials" },
-  { src: gallery2, alt: "Classroom environment" },
-  { src: gallery3, alt: "Students learning" },
+  { src: galleryCelebration, alt: "Festival celebration with students" },
+  { src: galleryGroup, alt: "Group learning session" },
+  { src: galleryPhonics, alt: "Phonics & drawing class" },
+  { src: galleryBoys, alt: "Boys studying together" },
+  { src: galleryStudents, alt: "Students writing practice" },
 ];
 
 const GallerySection = () => {
@@ -44,6 +46,9 @@ const GallerySection = () => {
                   src={img.src}
                   alt={img.alt}
                   className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{
+                    filter: 'brightness(1.08) contrast(1.05) saturate(1.1)',
+                  }}
                   loading="lazy"
                 />
               </div>
