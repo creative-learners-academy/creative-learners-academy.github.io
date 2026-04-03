@@ -7,12 +7,16 @@ import galleryPhonics from "@/assets/gallery-phonics-class.jpg";
 import galleryGroup from "@/assets/gallery-group-class.jpg";
 import galleryBoys from "@/assets/gallery-boys-studying.jpg";
 import galleryStudents from "@/assets/gallery-students-writing.jpg";
+import galleryArtPainting from "@/assets/gallery-art-painting.jpg";
+import galleryGroupStudy from "@/assets/gallery-group-study.jpg";
 
 const images = [
   { src: galleryArt, alt: "Art & drawing class with students" },
   { src: galleryCelebration, alt: "Festival celebration with students" },
+  { src: galleryArtPainting, alt: "Students painting artwork" },
   { src: galleryKidsClassroom, alt: "Kids in classroom session" },
   { src: galleryGroup, alt: "Group learning session" },
+  { src: galleryGroupStudy, alt: "Group study session with teacher" },
   { src: galleryKidsLearning, alt: "Students learning together" },
   { src: galleryPhonics, alt: "Phonics & drawing class" },
   { src: galleryBoys, alt: "Boys studying together" },
