@@ -29,8 +29,8 @@ const AboutSection = () => {
               <img
                 src={priyaPhoto}
                 alt="Priya Tewary — Founder, Creative Learners Academy"
-                className="w-full h-full object-cover object-[center_35%]"
-                style={{ filter: 'brightness(1.05) contrast(1.05) saturate(1.08)' }}
+                className="w-full h-full object-cover object-[center_20%]"
+                style={{ filter: 'brightness(1.08) contrast(1.05) saturate(1.1)' }}
               />
             </div>
           </motion.div>

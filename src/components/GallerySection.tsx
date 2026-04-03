@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
-import galleryStudents from "@/assets/gallery-students-writing.jpg";
-import galleryGroup from "@/assets/gallery-group-class.jpg";
-import galleryBoys from "@/assets/gallery-boys-studying.jpg";
+import galleryArt from "@/assets/gallery-art-class.jpg";
+import galleryKidsLearning from "@/assets/gallery-kids-learning.jpg";
+import galleryKidsClassroom from "@/assets/gallery-kids-classroom.jpg";
 import galleryCelebration from "@/assets/gallery-celebration.jpg";
 import galleryPhonics from "@/assets/gallery-phonics-class.jpg";
+import galleryGroup from "@/assets/gallery-group-class.jpg";
+import galleryBoys from "@/assets/gallery-boys-studying.jpg";
+import galleryStudents from "@/assets/gallery-students-writing.jpg";
 
 const images = [
+  { src: galleryArt, alt: "Art & drawing class with students" },
   { src: galleryCelebration, alt: "Festival celebration with students" },
+  { src: galleryKidsClassroom, alt: "Kids in classroom session" },
   { src: galleryGroup, alt: "Group learning session" },
+  { src: galleryKidsLearning, alt: "Students learning together" },
   { src: galleryPhonics, alt: "Phonics & drawing class" },
   { src: galleryBoys, alt: "Boys studying together" },
   { src: galleryStudents, alt: "Students writing practice" },
