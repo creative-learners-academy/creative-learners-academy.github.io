@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Target, Clock, Palette } from "lucide-react";
-import priyaPhoto from "@/assets/priya-tewary.jpg";
+import priyaPhoto from "@/assets/priya-tewary-clean.jpg";
 
 const highlights = [
   { icon: GraduationCap, title: "M.A. English Literature", desc: "Strong academic foundation with deep expertise in language and literature" },
