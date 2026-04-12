@@ -23,6 +23,8 @@ const specialClasses = [
 
 const offlineCourses = [
   { subject: "Handwriting", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
+  { subject: "Drawing", fee: "₹1,200", days: "Saturday, Sunday", timing: "1 Hour" },
+  { subject: "Folk Art", fee: "₹1,800", days: "Saturday, Sunday", timing: "1.5 Hours" },
 ];
 
 const CourseRow = ({ item }: { item: { subject: string; fee: string; days: string; timing: string } }) => (
