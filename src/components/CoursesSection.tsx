@@ -19,6 +19,8 @@ const specialClasses = [
   { subject: "Drawing", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
   { subject: "Folk Art", fee: "₹2,200", days: "Saturday, Sunday", timing: "1.5 Hours" },
   { subject: "Handwriting", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
+  { subject: "English Grammar", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
+  { subject: "Basic Spoken English", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
 ];
 
 const offlineCourses = [
