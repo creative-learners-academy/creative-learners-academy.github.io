@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 
 const tuitionClasses = [
   { subject: "Class 4th & 5th", fee: "₹2,500", days: "Monday to Friday", timing: "1 Hour" },
-  { subject: "Class 6th to 8th", fee: "₹3,500", days: "Monday to Saturday", timing: "1.5 to 2 Hours" },
+  { subject: "Class 6th to 8th", fee: "₹3,500", days: "Monday to Friday", timing: "1.5 to 2 Hours" },
 ];
 
 const class10Subjects = [
-  { subject: "Science", fee: "₹3,000", days: "Mon, Wed, Friday", timing: "1.5 Hours" },
-  { subject: "Social Studies (SST)", fee: "₹2,500", days: "Tue, Wed, Saturday", timing: "1.5 Hours" },
-  { subject: "English", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
-  { subject: "Hindi", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
+  { subject: "Science", fee: "₹3,000", days: "Mon, Wed, Friday", timing: "1 Hour" },
+  { subject: "Social Studies (SST)", fee: "₹2,500", days: "Tue, Wed, Saturday", timing: "1 Hour" },
+  { subject: "English", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
+  { subject: "Hindi", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
 ];
 
 const specialClasses = [
