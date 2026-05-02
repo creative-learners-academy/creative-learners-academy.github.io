@@ -15,12 +15,14 @@ const class10Subjects = [
 ];
 
 const specialClasses = [
-  { subject: "Phonics", fee: "₹2,000", days: "Monday to Saturday", timing: "1 Hour" },
+  { subject: "Phonics", fee: "₹2,500", days: "Monday to Saturday", timing: "1 Hour" },
   { subject: "Drawing", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
-  { subject: "Folk Art", fee: "₹2,200", days: "Saturday, Sunday", timing: "1.5 Hours" },
+  { subject: "Folk Art", fee: "₹2,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
   { subject: "Handwriting", fee: "₹1,500", days: "Saturday, Sunday", timing: "1.5 Hours" },
   { subject: "English Grammar", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
   { subject: "Basic Spoken English", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
+  { subject: "Basic Hindi", fee: "₹1,500", days: "Saturday, Sunday", timing: "1 Hour" },
+  { subject: "Basic Maths", fee: "₹1,500", days: "Saturday, Sunday", timing: "45 mins" },
 ];
 
 const offlineCourses = [
